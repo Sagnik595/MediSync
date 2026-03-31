@@ -15,7 +15,7 @@ const SpecialityMenu = () => {
       </p>
 
       {/* Speciality Cards */}
-      <ul className="flex flex-wrap justify-center gap-8 mt-6">
+      <ul className="flex flex-wrap justify-center gap-5 mt-4">
         {specialityData.map((item, idx) => (
           <li key={idx}>
             <Link
@@ -24,13 +24,11 @@ const SpecialityMenu = () => {
               className="flex flex-col items-center gap-3 group"
             >
               {/* Icon Circle */}
-              <div className="w-24 h-24 rounded-full bg-blue-50 flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:-translate-y-1 group-hover:shadow-md">
                 <img
                   src={item.image}
                   alt={item.speciality}
-                  className="w-16 h-16 object-contain"
+                  className="w-25 h-25 rounded-full bg-blue-50 flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:-translate-y-1 group-hover:shadow-md"
                 />
-              </div>
 
               {/* Label */}
               <p className="text-sm text-gray-600 group-hover:text-[#5F6FFF] transition-colors duration-200">
