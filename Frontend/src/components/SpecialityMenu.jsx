@@ -20,7 +20,7 @@ const SpecialityMenu = () => {
           <li key={idx}>
             <Link
             onClick={()=>scrollTo(0,0)}
-              to={`/doctors?speciality=${encodeURIComponent(item.speciality)}`}
+              to={`/doctors/${item.speciality}`}
               className="flex flex-col items-center gap-3 group"
             >
               {/* Icon Circle */}
