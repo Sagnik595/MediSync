@@ -48,7 +48,7 @@ const Doctors = () => {
             <Link
               to={`appointments/${item._id}`}
               key={item._id}
-              className='bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-md transition-shadow cursor-pointer'
+              className='bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-[0_0_17px_1px] hover:shadow-black hover:scale-105 transition-all duration-700 cursor-pointer'
             >
               <div className='bg-blue-50 flex items-center justify-center h-48'>
                 <img
