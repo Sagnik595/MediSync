@@ -33,7 +33,7 @@ const Login = () => {
               <>
                 <label className='text-gray-600' htmlFor='name'>Full Name</label><br />
                 <input
-                  className='mb-3 mt-1 p-1 w-[310px] border-1 border-gray-600 rounded-[5px]'
+                  className='mb-3 mt-1 p-1 w-77.5 border border-gray-600 rounded-[5px]'
                   id='name'
                   type="text"
                   value={name}
@@ -44,7 +44,7 @@ const Login = () => {
 
             <label className='text-gray-600' htmlFor='email'>Email</label><br />
             <input
-              className='mb-3 mt-1 p-1 w-[310px] border-1 border-gray-600 rounded-[5px]'
+              className='mb-3 mt-1 p-1 w-77.5 border border-gray-600 rounded-[5px]'
               id='email'
               type="email"
               value={email}
@@ -53,7 +53,7 @@ const Login = () => {
 
             <label className='text-gray-600' htmlFor='password'>Password</label><br />
             <input
-              className='mb-3 mt-1 p-1 w-[310px] border-1 border-gray-600 rounded-[5px]'
+              className='mb-3 mt-1 p-1 w-77.5 border border-gray-600 rounded-[5px]'
               id='password'
               type="password"
               value={pass}
@@ -62,7 +62,7 @@ const Login = () => {
 
             <button
               type='submit'
-              className='mb-4 mt-3 cursor-pointer p-2 rounded-[5px] text-center w-[310px] font-bold text-white bg-[#5F6FFF] hover:bg-blue-700 transition-all duration-700'
+              className='mb-4 mt-3 cursor-pointer p-2 rounded-[5px] text-center w-77.5 font-bold text-white bg-[#5F6FFF] hover:bg-blue-700 transition-all duration-700'
             >
               {state === 'Sign Up' ? 'Create Account' : 'Login'}
             </button>

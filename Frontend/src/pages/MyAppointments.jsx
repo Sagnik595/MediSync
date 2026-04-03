@@ -40,7 +40,7 @@ const MyAppointments = () => {
               </div>
 
               {/* Buttons */}
-              <div className='flex flex-col gap-2 min-w-[160px]'>
+              <div className='flex flex-col gap-2 min-w-40'>
                 <button className='w-40 py-2 bg-indigo-500 hover:bg-indigo-600 text-white text-sm rounded transition-all'>
                   Pay here
                 </button>

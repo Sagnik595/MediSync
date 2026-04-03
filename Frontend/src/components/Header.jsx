@@ -3,9 +3,9 @@ import { assets } from "../assets/assets_frontend/assets.js";
 
 const Header = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between bg-[#5F6FFF] rounded-2xl mx-30 mt-20 px-10 py-12 overflow-hidden relative min-h-[340px]">
+    <div className="flex flex-col md:flex-row items-center justify-between bg-[#5F6FFF] rounded-2xl mx-30 mt-20 px-10 py-12 overflow-hidden relative min-h-85">
       {/* ------ Left Side ------- */}
-      <div className="flex flex-col gap-6 z-10 max-w-[500px]">
+      <div className="flex flex-col gap-6 z-10 max-w-125">
         {/* Headline */}
         <h1 className="text-white text-3xl md:text-4xl font-bold leading-tight">
           Book Appointment <br /> With Trusted Doctors
@@ -18,7 +18,7 @@ const Header = () => {
             alt="Trusted doctors"
             className="w-24 h-auto rounded-full"
           />
-          <p className="text-white/80 text-sm leading-snug max-w-[220px]">
+          <p className="text-white/80 text-sm leading-snug max-w-55">
             Simply browse through our extensive list of trusted doctors,
             schedule your appointment hassle-free.
           </p>
@@ -39,7 +39,7 @@ const Header = () => {
         <img
           src={assets.header_img}
           alt="Trusted doctors"
-          className="w-full max-w-[400px] md:max-w-[480px] object-contain drop-shadow-xl"
+          className="w-full max-w-100 md:max-w-120 object-contain drop-shadow-xl"
         />
       </div>
     </div>

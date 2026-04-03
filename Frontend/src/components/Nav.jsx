@@ -95,7 +95,7 @@ const Nav = () => {
               />
 
               {/* Dropdown Menu */}
-              <div className="absolute top-full right-0 mt-3 w-48 bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.10)] border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 translate-y-[-6px] transition-all duration-200 z-50">
+              <div className="absolute top-full right-0 mt-3 w-48 bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.10)] border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 -translate-y-1.5 transition-all duration-200 z-50">
                 <div className="p-2 flex flex-col gap-0.5">
                   <button
                     onClick={() => navigate("/myprofile")}
@@ -123,7 +123,7 @@ const Nav = () => {
             <div className="hidden md:flex items-center gap-3">
               <button
                 onClick={() => navigate("/login")}
-                className="cursor-pointer text-sm font-semibold text-white px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-cyan-600 shadow-[0_3px_14px_rgba(6,182,212,0.4)] hover:shadow-[0_6px_20px_rgba(6,182,212,0.5)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+                className="cursor-pointer text-sm font-semibold text-white px-5 py-2.5 rounded-xl bg-linear-to-r from-cyan-500 to-cyan-600 shadow-[0_3px_14px_rgba(6,182,212,0.4)] hover:shadow-[0_6px_20px_rgba(6,182,212,0.5)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
               >
                 Create Account
               </button>
@@ -132,19 +132,19 @@ const Nav = () => {
 
           {/* Hamburger */}
           <button
-            className="md:hidden flex flex-col gap-[5px] p-1.5"
+            className="md:hidden flex flex-col gap-1.25 p-1.5"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
-            <span className={`block w-5 h-0.5 bg-slate-700 rounded-full transition-all duration-300 origin-center ${menuOpen ? "translate-y-[7px] rotate-45" : ""}`} />
+            <span className={`block w-5 h-0.5 bg-slate-700 rounded-full transition-all duration-300 origin-center ${menuOpen ? "translate-y-1.75 rotate-45" : ""}`} />
             <span className={`block w-5 h-0.5 bg-slate-700 rounded-full transition-all duration-300 ${menuOpen ? "opacity-0 scale-x-0" : ""}`} />
-            <span className={`block w-5 h-0.5 bg-slate-700 rounded-full transition-all duration-300 origin-center ${menuOpen ? "-translate-y-[7px] -rotate-45" : ""}`} />
+            <span className={`block w-5 h-0.5 bg-slate-700 rounded-full transition-all duration-300 origin-center ${menuOpen ? "-translate-y-1.75 -rotate-45" : ""}`} />
           </button>
         </nav>
 
         {/* Mobile Menu */}
         <div
-          className={`fixed top-[70px] left-0 right-0 z-40 md:hidden bg-white/97 backdrop-blur-xl border-b border-cyan-100 shadow-[0_8px_32px_rgba(0,0,0,0.07)] transition-all duration-300 overflow-hidden
+          className={`fixed top-17.5 left-0 right-0 z-40 md:hidden bg-white/97 backdrop-blur-xl border-b border-cyan-100 shadow-[0_8px_32px_rgba(0,0,0,0.07)] transition-all duration-300 overflow-hidden
             ${menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}
           style={{ fontFamily: "'DM Sans', sans-serif" }}
         >
@@ -170,7 +170,7 @@ const Nav = () => {
           <div className="mt-3 pt-3 border-t border-slate-100 flex flex-col gap-2 px-5 pb-4">
             <button
               onClick={() => { navigate("/login"); setMenuOpen(false); }}
-              className="text-sm font-semibold text-white py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-cyan-600 shadow-[0_3px_14px_rgba(6,182,212,0.35)] text-center"
+              className="text-sm font-semibold text-white py-2.5 rounded-xl bg-linear-to-r from-cyan-500 to-cyan-600 shadow-[0_3px_14px_rgba(6,182,212,0.35)] text-center"
             >
               Create Account
             </button>

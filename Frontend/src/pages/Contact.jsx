@@ -19,7 +19,7 @@ const Contact = () => {
       </div>
 
       {/* Main Content Card */}
-      <div className="max-h-[370px] max-w-4xl w-full bg-white rounded-2xl overflow-hidden flex flex-col md:flex-row transition-all duration-500 shadow-[5px_10px_23px_1px] shadow-black hover:scale-105 trantion-all duration-700">
+      <div className="max-h-92.5 max-w-4xl w-full bg-white rounded-2xl overflow-hidden flex flex-col md:flex-row transition-all duration-500 shadow-[5px_10px_23px_1px] shadow-black hover:scale-105 trantion-all">
   
         {/* Image Section */}
         <div className="md:w-1/2 overflow-hidden group">

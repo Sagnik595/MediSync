@@ -194,7 +194,7 @@ const About = () => {
               />
               {/* founder badge over image */}
               <div className="absolute bottom-4 left-4 flex items-center gap-3 bg-white/90 backdrop-blur-sm rounded-xl px-4 py-2.5 shadow-lg">
-                <div className="w-9 h-9 rounded-full bg-gradient-to-br from-teal-500 to-[#0d1f3c] flex items-center justify-center flex-shrink-0">
+                <div className="w-9 h-9 rounded-full bg-linear-to-br from-teal-500 to-[#0d1f3c] flex items-center justify-center shrink-0">
                   <span className="font-playfair text-white text-base font-bold">S</span>
                 </div>
                 <div>
@@ -206,8 +206,8 @@ const About = () => {
           </div>
 
           {/* RIGHT — dark panel */}
-          <div className="relative overflow-hidden min-h-[480px] lg:min-h-0">
-            <div className="clip-right absolute inset-0 bg-gradient-to-br from-[#0d1f3c] to-[#173560]">
+          <div className="relative overflow-hidden min-h-120 lg:min-h-0">
+            <div className="clip-right absolute inset-0 bg-linear-to-br from-[#0d1f3c] to-[#173560]">
 
               {/* blobs */}
               <div className="anim-pulseSlow absolute w-72 h-72 rounded-full bg-teal-400 -top-10 -right-10 blur-[80px] opacity-15" />
@@ -258,7 +258,7 @@ const About = () => {
         <section ref={whyRef} className="relative px-10 md:px-20 py-28 bg-[#f7f4ef] overflow-hidden">
 
           {/* ghost watermark */}
-          <div className="absolute font-playfair font-bold text-[#0d1f3c]/[0.04] select-none pointer-events-none leading-none"
+          <div className="absolute font-playfair font-bold text-[#0d1f3c]/4 select-none pointer-events-none leading-none"
             style={{ fontSize: 'clamp(100px,18vw,220px)', top: -20, left: -10 }}>WHY</div>
 
           {/* header */}
@@ -278,7 +278,7 @@ const About = () => {
                 className={`bg-white rounded-[20px] p-10 card-lift opacity-init ${cardsInView ? 'anim-scaleIn' : ''}`}
                 style={{ animationDelay: `${0.1 + i * 0.15}s` }}>
 
-                <span className="absolute top-6 right-6 font-playfair text-[70px] font-bold text-[#0d1f3c]/[0.04] leading-none select-none">
+                <span className="absolute top-6 right-6 font-playfair text-[70px] font-bold text-[#0d1f3c]/4 leading-none select-none">
                   {c.num}
                 </span>
                 <div className={`w-14 h-14 rounded-2xl ${c.iconBg} flex items-center justify-center text-2xl mb-7`}>
@@ -303,7 +303,7 @@ const About = () => {
               Built with purpose.<br />
               Driven by <em className="italic text-teal-300">people.</em>
             </h3>
-            <div className={`mt-6 h-px bg-gradient-to-r from-teal-400 to-transparent origin-left opacity-init ${missionInView ? 'anim-lineGrow' : ''}`}
+            <div className={`mt-6 h-px bg-linear-to-r from-teal-400 to-transparent origin-left opacity-init ${missionInView ? 'anim-lineGrow' : ''}`}
               style={{ animationDelay: '0.4s' }} />
           </div>
 
@@ -316,7 +316,7 @@ const About = () => {
               Hey, I am Sagnik, and I built MediSync because it was fun and I was just craving really good projects for my CV. Now you might think this desinging is done my AI, partly correct but believe me the first design I got from claude was really shitty, I had to edit it for like a thousands time and that too <span className='font-bold'>MANUALLY</span>, and the assets are taken from my tutor, and lastly I just want to say if u still have something to say then f*** off!!
             </p>
             <div className="mt-8 flex items-center gap-4">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-teal-400 to-[#173560] flex items-center justify-center">
+              <div className="w-10 h-10 rounded-full bg-linear-to-br from-teal-400 to-[#173560] flex items-center justify-center">
                 <span className="font-playfair text-white font-bold">S</span>
               </div>
               <div>
