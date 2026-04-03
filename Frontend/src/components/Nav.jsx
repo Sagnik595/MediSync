@@ -36,7 +36,7 @@ const Nav = () => {
 
       <header>
         <nav
-          className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-10 h-[70px] transition-all duration-500
+          className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-10 h-17.5 transition-all duration-500
             ${
               scrolled
                 ? "bg-white/95 backdrop-blur-xl shadow-[0_4px_30px_rgba(6,182,212,0.08)] border-b border-cyan-100"
@@ -98,7 +98,7 @@ const Nav = () => {
               <div className="absolute top-full right-0 mt-3 w-48 bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.10)] border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 translate-y-[-6px] transition-all duration-200 z-50">
                 <div className="p-2 flex flex-col gap-0.5">
                   <button
-                    onClick={() => navigate("/profile")}
+                    onClick={() => navigate("/myprofile")}
                     className="cursor-pointer text-left w-full px-3 py-2.5 text-sm text-slate-600 font-medium rounded-xl hover:bg-cyan-50 hover:text-cyan-600 transition-colors duration-150"
                   >
                     My Profile
