@@ -3,6 +3,7 @@ import cors from 'cors'
 import 'dotenv/config'
 import { connect } from './config/dbconnect.js';
 import connect_cloudinary from './config/cloudinary.js';
+import adminRouter from './routes/adminRoute.js';
 
 
 
@@ -21,6 +22,8 @@ app.use(cors())
 
 
 //API endpoints
+app.use('/api/admin',adminRouter);
+
 app.get('/',(req,res)=>{
     res.send("App is working")
 })
