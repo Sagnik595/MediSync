@@ -6,8 +6,11 @@ const AdminContextProvider = (props)=>{
 
     const [aToken, setatoken] = useState('')
 
+    const backendurl = import.meta.env.VITE_BACKEND_URL;
+
     const value = {
-        aToken,setatoken
+        aToken,setatoken,
+        backendurl,
     }
     return (
     <AdminContext.Provider value={value}>

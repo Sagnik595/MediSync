@@ -1,14 +1,21 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Nav from '../components/Nav'
+import { AdminContext } from '../context/AdminContext'
 
 const Login = () => {
   const [state, setState] = useState('Admin Login')
   const [email, setEmail] = useState('')
   const [pass, setPass] = useState('')
-  const [name, setName] = useState('')
+
+  const {setatoken,backendurl} = useContext(AdminContext)
 
   const handleSubmit = async (event) => {
-    event.preventDefault()
+    event.preventDefault();
+    try {
+      
+    } catch (error) {
+      
+    }
   }
 
   return (
