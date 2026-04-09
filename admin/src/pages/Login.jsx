@@ -1,20 +1,38 @@
 import React, { useContext, useState } from 'react'
 import Nav from '../components/Nav'
 import { AdminContext } from '../context/AdminContext'
+import axios from 'axios'
+import { toast } from 'react-toastify'
 
 const Login = () => {
   const [state, setState] = useState('Admin Login')
   const [email, setEmail] = useState('')
-  const [pass, setPass] = useState('')
+  const [password, setPassword] = useState('')
 
   const {setatoken,backendurl} = useContext(AdminContext)
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log(state === "Admin Login");
+    
     try {
-      
+      if(state === 'Admin Login')
+      {
+        const {data} = await axios.post(backendurl + 'api/admin/login',{email,password})
+        console.log(data);
+        
+        if(data.success)
+        {
+          localStorage.setItem('atoken',data.token);
+          setatoken(data.token);
+        }
+        else{
+          toast.error(data.message);
+        }
+      }
     } catch (error) {
-      
+      console.log("Admin credentials does not match!!");
+      console.log(error);
     }
   }
 
@@ -50,8 +68,8 @@ const Login = () => {
               className='mb-3 mt-1 p-1 w-77.5 border border-gray-600 rounded-[5px]'
               id='password'
               type="password"
-              value={pass}
-              onChange={(e) => setPass(e.target.value)}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             /><br />
 
             <button
