@@ -21,7 +21,7 @@ const Sidebar = () => {
     },
     {
       name: "Doctors List",
-      path: "/doctor-list",
+      path: "/alldoctors",
       icon: "👨‍⚕️",
     },
   ];

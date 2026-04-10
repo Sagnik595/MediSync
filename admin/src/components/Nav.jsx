@@ -1,9 +1,10 @@
 import React, { useContext} from "react";
 import { AdminContext } from "../context/AdminContext";
-
+import { useNavigate } from "react-router-dom";
 
 const Nav = () => {
   const { aToken ,setatoken } = useContext(AdminContext);
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     navigate('/')

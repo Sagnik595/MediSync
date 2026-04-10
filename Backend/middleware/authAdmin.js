@@ -16,4 +16,5 @@ const authadmin = (req,res,next)=>{
     }
 }
 
+
 export {authadmin};

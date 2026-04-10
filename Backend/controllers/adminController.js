@@ -90,4 +90,16 @@ const adminlogin = (req,res)=>{
   }
 }
 
-export { addDoc, adminlogin};
+//API to get all doctors data for admin dashboard
+const getAllDoctors = async (req, res) => {
+  try {
+    const doctors = await doctorModel.find();
+    res.json({ success: true, doctors });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: error.message });
+  }
+};
+
+
+export { addDoc, adminlogin, getAllDoctors};
