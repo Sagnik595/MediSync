@@ -8,15 +8,12 @@ export const AppContextProvider = (props)=>{
     
     const[bookappointment,setAppointment] = useState([])
 
+    const [token,setToken] = useState(localStorage.getItem('token')?localStorage.getItem('token'):false)
+
     const backendurl = import.meta.env.VITE_BACKEND_URL;
     
     const [doctors,setDoctors] = useState([])
     
-    const value={
-        doctors,
-        bookappointment,setAppointment
-    }
-
     const getalldata = async()=>{
 
         try {
@@ -29,6 +26,13 @@ export const AppContextProvider = (props)=>{
             toast.error(error.message);
         }
     }
+
+    const value={
+        doctors,
+        bookappointment,setAppointment,
+        token,setToken,backendurl
+    }
+
 
     useEffect(()=>{
         getalldata();

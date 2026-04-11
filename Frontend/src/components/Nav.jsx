@@ -1,13 +1,19 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import { assets } from "../assets/assets_frontend/assets.js";
+import { AppContext } from "../context/Context.jsx";
 
 const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [token, setToken] = useState(true);
+  const {token,setToken} = useContext(AppContext)
   const navigate = useNavigate();
   const location = useLocation();
+
+  const logout = ()=>{
+    setToken(false)
+    localStorage.removeItem('token')
+  }
 
   const links = [
     { name: "HOME", href: "/" },
@@ -111,7 +117,7 @@ const Nav = () => {
                   </button>
                   <div className="h-px bg-slate-100 my-1" />
                   <button
-                    onClick={() => setToken(false)}
+                    onClick={logout}
                     className="cursor-pointer text-left w-full px-3 py-2.5 text-sm text-red-400 font-medium rounded-xl hover:bg-red-50 transition-colors duration-150"
                   >
                     Logout
