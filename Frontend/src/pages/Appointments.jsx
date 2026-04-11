@@ -1,8 +1,10 @@
 import React, {useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { doctors } from "../assets/assets_frontend/assets";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import { useContext } from "react";
+import { AppContext } from "../context/Context";
+import { toast } from "react-toastify";
 
 const DAYS = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 const TIME_SLOTS = [
@@ -25,11 +27,22 @@ function getNextDays(count = 7) {
   });
 }
 
+
 const Appointments = () => {
+  const {doctors, bookappointment, setAppointment} = useContext(AppContext)
   const navigate = useNavigate();
   const { docID } = useParams();
-  const doctor = doctors.find((d) => d._id === docID);
-  console.log(doctor);
+  const doctor = doctors.find((d) => d._id.toString() === docID);
+  
+
+  const handleSubmit = (element)=>{
+    console.log(element);
+    
+  setAppointment(prev=>[...prev,element])
+  toast('Appointment Booked!!')
+  navigate('/')
+  
+}
 
   const days = getNextDays();
   const [selectedDay, setSelectedDay] = useState(0);
@@ -137,6 +150,14 @@ const Appointments = () => {
           </div>
 
           <button
+          onClick={()=>{
+            let finalData = {
+              doctor,
+              time:selectedTime,
+              day:DAYS[selectedDay]
+            }
+            handleSubmit(finalData)
+          }}
             disabled={!selectedTime}
             className={` cursor-pointer w-full sm:w-64 py-3 rounded-full text-white text-sm font-medium transition-all
               ${selectedTime ? "bg-blue-600 hover:bg-blue-700" : "bg-blue-300 cursor-not-allowed"}`}

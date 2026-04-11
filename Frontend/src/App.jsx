@@ -7,10 +7,12 @@ import Profile from "./pages/Profile"
 import Contact from "./pages/Contact"
 import MyAppointments from "./pages/MyAppointments"
 import Appointments from './pages/Appointments'
+import { ToastContainer, toast } from 'react-toastify';
 
 const App = () => {
   return (
     <>
+      <ToastContainer />
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>

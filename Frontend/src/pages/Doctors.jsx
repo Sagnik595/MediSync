@@ -2,9 +2,12 @@ import React, { useState, useEffect } from 'react'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
-import { doctors, specialityData } from '../assets/assets_frontend/assets'
+import {specialityData } from '../assets/assets_frontend/assets'
+import { useContext } from 'react'
+import { AppContext } from '../context/Context'
 
 const Doctors = () => {
+  const {doctors} = useContext(AppContext)
   const location = useLocation()
   const navigate = useNavigate()
   const { speciality: urlSpeciality } = useParams()
