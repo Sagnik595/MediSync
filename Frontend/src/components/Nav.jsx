@@ -6,10 +6,11 @@ import { AppContext } from "../context/Context.jsx";
 const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const {token,setToken} = useContext(AppContext)
+  const {token,setToken,userdata} = useContext(AppContext)
   const navigate = useNavigate();
   const location = useLocation();
-
+  console.log(userdata.image);
+  
   const logout = ()=>{
     setToken(false)
     localStorage.removeItem('token')
@@ -90,7 +91,7 @@ const Nav = () => {
           {token ? (
             <div className="hidden md:flex items-center gap-2 cursor-pointer group relative">
               <img
-                src={assets.profile_pic}
+                src={userdata.image}
                 alt="Profile"
                 className="w-15 h-15 rounded-full object-cover border-2 border-cyan-100 group-hover:border-cyan-300 transition-all duration-200"
               />

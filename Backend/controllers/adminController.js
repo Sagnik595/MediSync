@@ -102,4 +102,21 @@ const getAllDoctors = async (req, res) => {
 };
 
 
-export { addDoc, adminlogin, getAllDoctors};
+//API to delete doctor 
+const deletedoc = async(req,res)=>{
+  const {email} = req.body;
+  try {
+    const docData = await doctorModel.findOne({email})
+    if(!docData)
+        return res.json({success:false,message:"No doctor found!!"})
+    await doctorModel.findByIdAndDelete(docData._id);
+    res.json({success:true,message:"Doctor deleted successfully"})
+  } catch (error) {
+    console.log(error.message);
+    res.json({success:false,message:error.message});
+    
+  }
+}
+
+
+export { addDoc, adminlogin, getAllDoctors, deletedoc};
