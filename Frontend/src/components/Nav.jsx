@@ -135,7 +135,7 @@ const Nav = () => {
           }}
         >
           {/* Top gradient border */}
-          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/70 to-transparent" />
+          <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-cyan-400/70 to-transparent" />
 
           <div className="h-full flex items-center justify-between">
             {/* Logo */}
@@ -146,10 +146,10 @@ const Nav = () => {
             >
               <div className="relative logo-float">
                 {/* Outer glow */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400 to-blue-500 blur-lg opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
+                <div className="absolute inset-0 rounded-2xl bg-linear-to-r from-cyan-400 to-blue-500 blur-lg opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
 
                 {/* Logo container */}
-                <div className="relative w-12 h-12 rounded-2xl p-[1px] bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-600 shadow-[0_10px_30px_rgba(59,130,246,0.35)]">
+                <div className="relative w-12 h-12 rounded-2xl p-px bg-linear-to-br from-cyan-400 via-blue-500 to-indigo-600 shadow-[0_10px_30px_rgba(59,130,246,0.35)]">
                   <div className="w-full h-full rounded-2xl bg-white flex items-center justify-center overflow-hidden">
                     <img
                       src="/logo2.png"
@@ -166,7 +166,7 @@ const Nav = () => {
                   style={{ fontFamily: "'Syne', sans-serif" }}
                 >
                   Medi
-                  <span className="bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                  <span className="bg-linear-to-r from-cyan-500 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
                     Sync
                   </span>
                 </span>
@@ -192,8 +192,8 @@ const Nav = () => {
                     {/* Active background */}
                     {isActive(link.href) && (
                       <>
-                        <span className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-50 to-blue-50 border border-cyan-100" />
-                        <span className="absolute inset-x-4 bottom-1 h-0.5 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500" />
+                        <span className="absolute inset-0 rounded-2xl bg-linear-to-r from-cyan-50 to-blue-50 border border-cyan-100" />
+                        <span className="absolute inset-x-4 bottom-1 h-0.5 rounded-full bg-linear-to-r from-cyan-400 to-blue-500" />
                       </>
                     )}
 
@@ -215,7 +215,7 @@ const Nav = () => {
                   {/* Avatar */}
                   <button className="flex items-center gap-3 p-1.5 pr-3 rounded-full bg-white/70 border border-slate-200 hover:border-cyan-200 hover:shadow-lg transition-all duration-300 cursor-pointer">
                     <div className="relative">
-                      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 blur-md opacity-50" />
+                      <div className="absolute inset-0 rounded-full bg-linear-to-r from-cyan-400 to-blue-500 blur-md opacity-50" />
                       <img
                         src={userdata?.image || assets.profile_pic}
                         alt="Profile"
@@ -233,7 +233,7 @@ const Nav = () => {
                   {/* Dropdown */}
                   <div className="dropdown-enter absolute top-full right-0 mt-4 w-64 bg-white/95 backdrop-blur-2xl rounded-3xl border border-white shadow-[0_20px_60px_rgba(15,23,42,0.15)] opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 overflow-hidden">
                     {/* Header */}
-                    <div className="p-4 border-b border-slate-100 bg-gradient-to-r from-cyan-50 to-blue-50">
+                    <div className="p-4 border-b border-slate-100 bg-linear-to-r from-cyan-50 to-blue-50">
                       <p className="text-sm font-bold text-slate-900">
                         {userdata?.name || "Welcome"}
                       </p>
@@ -278,7 +278,7 @@ const Nav = () => {
                   onClick={() => navigate("/login")}
                   className="hidden md:inline-flex relative items-center gap-2 px-6 py-3 rounded-2xl font-semibold text-sm text-white overflow-hidden shadow-[0_12px_30px_rgba(59,130,246,0.35)] hover:shadow-[0_16px_40px_rgba(59,130,246,0.45)] hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
                 >
-                  <span className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600" />
+                  <span className="absolute inset-0 bg-linear-to-r from-cyan-500 via-blue-600 to-indigo-600" />
                   <span className="absolute inset-0 bg-[linear-gradient(110deg,transparent,rgba(255,255,255,0.25),transparent)] -translate-x-full hover:translate-x-full transition-transform duration-1000" />
                   <span className="relative z-10">Create Account</span>
                 </button>
@@ -316,7 +316,7 @@ const Nav = () => {
         <div
           className={`md:hidden max-w-7xl mx-auto mt-3 transition-all duration-400 overflow-hidden ${
             menuOpen
-              ? "max-h-[600px] opacity-100"
+              ? "max-h-150 opacity-100"
               : "max-h-0 opacity-0 pointer-events-none"
           }`}
           style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
@@ -330,7 +330,7 @@ const Nav = () => {
                     onClick={() => setMenuOpen(false)}
                     className={`block px-4 py-3 rounded-2xl text-sm font-semibold transition-all duration-300 ${
                       isActive(link.href)
-                        ? "bg-gradient-to-r from-cyan-50 to-blue-50 text-cyan-700"
+                        ? "bg-linear-to-r from-cyan-50 to-blue-50 text-cyan-700"
                         : "text-slate-600 hover:bg-slate-50"
                     }`}
                   >
@@ -379,7 +379,7 @@ const Nav = () => {
                     navigate("/login");
                     setMenuOpen(false);
                   }}
-                  className="w-full py-3 rounded-2xl text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 shadow-lg"
+                  className="w-full py-3 rounded-2xl text-sm font-semibold text-white bg-linear-to-r from-cyan-500 via-blue-600 to-indigo-600 shadow-lg"
                 >
                   Create Account
                 </button>

@@ -40,12 +40,12 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="relative mt-0 overflow-hidden bg-gradient-to-br from-[#020617] via-[#0f172a] to-[#1e3a8a] text-white">
+    <footer className="relative mt-0 overflow-hidden bg-linear-to-br from-[#020617] via-[#0f172a] to-[#1e3a8a] text-white">
       {/* Background Effects */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-24 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute top-1/3 right-1/4 w-[28rem] h-[28rem] bg-indigo-500/15 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute -bottom-32 left-1/3 w-[32rem] h-[32rem] bg-cyan-400/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-1/3 right-1/4 w-md h-112 bg-indigo-500/15 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute -bottom-32 left-1/3 w-lg h-128 bg-cyan-400/10 rounded-full blur-3xl animate-pulse" />
 
         <div
           className="absolute inset-0 opacity-[0.05]"
@@ -65,7 +65,7 @@ const Footer = () => {
             <div className="flex items-center gap-4 mb-6">
               <div className="relative">
                 <div className="absolute inset-0 bg-blue-500 blur-xl opacity-60 rounded-2xl" />
-                <div className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center shadow-2xl">
+                <div className="relative w-14 h-14 rounded-2xl bg-linear-to-br from-blue-500 to-cyan-400 flex items-center justify-center shadow-2xl">
                   <svg
                     className="w-7 h-7 text-white"
                     viewBox="0 0 24 24"
@@ -83,7 +83,7 @@ const Footer = () => {
               <div>
                 <h2 className="text-3xl font-extrabold tracking-tight">
                   Medi
-                  <span className="bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent">
+                  <span className="bg-linear-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent">
                     Sync
                   </span>
                 </h2>
@@ -111,7 +111,7 @@ const Footer = () => {
                   placeholder="Enter your email"
                   className="flex-1 px-5 py-3 rounded-full bg-white/10 border border-white/15 backdrop-blur-md text-white placeholder:text-slate-400 outline-none focus:border-cyan-400 transition"
                 />
-                <button className="px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-semibold shadow-lg hover:scale-105 hover:shadow-cyan-500/30 transition-all duration-300">
+                <button className="px-6 py-3 rounded-full bg-linear-to-r from-blue-500 to-cyan-400 text-white font-semibold shadow-lg hover:scale-105 hover:shadow-cyan-500/30 transition-all duration-300">
                   Subscribe
                 </button>
               </div>
@@ -164,7 +164,7 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="mt-14 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+        <div className="mt-14 h-px bg-linear-to-r from-transparent via-white/20 to-transparent" />
 
         {/* Bottom Bar */}
         <div className="pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
@@ -175,7 +175,7 @@ const Footer = () => {
           <p className="text-sm text-slate-300 flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             Crafted with precision by{' '}
-            <span className="font-semibold bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent">
+            <span className="font-semibold bg-linear-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent">
               Sagnik
             </span>
           </p>

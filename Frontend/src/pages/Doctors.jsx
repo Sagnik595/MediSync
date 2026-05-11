@@ -186,12 +186,12 @@ const Doctors = () => {
     <>
       <Nav />
 
-      <div className="relative pt-22 pb-28 min-h-screen overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100/60">
+      <div className="relative pt-22 pb-28 min-h-screen overflow-hidden bg-linear-to-br from-slate-50 via-blue-50 to-indigo-100/60">
         {/* Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 left-0 w-96 h-96 bg-blue-400/15 rounded-full blur-3xl" />
-          <div className="absolute top-1/3 right-0 w-[28rem] h-[28rem] bg-indigo-400/15 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-1/3 w-[30rem] h-[30rem] bg-cyan-300/10 rounded-full blur-3xl" />
+          <div className="absolute top-1/3 right-0 w-md h-112 bg-indigo-400/15 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-1/3 w-120 h-120 bg-cyan-300/10 rounded-full blur-3xl" />
 
           <div
             className="absolute inset-0 opacity-[0.03]"
@@ -274,7 +274,7 @@ const Doctors = () => {
                     }`}
                   >
                     {/* Image */}
-                    <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-50">
+                    <div className="relative aspect-square overflow-hidden bg-linear-to-br from-blue-50 to-indigo-50">
                       <img
                         src={item.image}
                         alt={item.name}

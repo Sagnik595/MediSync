@@ -7,14 +7,14 @@ const TopDoctors = () => {
   const { doctors } = useContext(AppContext)
 
   return (
-    <div className="flex flex-col items-center gap-10 py-0 px-4 md:px-10 pt-10 pb-10 relative bg-gradient-to-br from-[#1a73e8] via-[#0d47a1] to-[#0a2e6e] overflow-hidden">
+    <div className="flex flex-col items-center gap-10 py-0 px-4 md:px-10 pt-10 pb-10 relative bg-linear-to-br from-[#1a73e8] via-[#0d47a1] to-[#0a2e6e] overflow-hidden">
       {/* Cursor-like Spotlight Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_80%_30%,rgba(147,197,253,0.08),transparent_35%),radial-gradient(circle_at_50%_80%,rgba(191,219,254,0.06),transparent_40%)] pointer-events-none" />
 
       {/* Animated Background Blobs */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl animate-blob" />
-      <div className="absolute top-20 right-1/4 w-[28rem] h-[28rem] bg-indigo-300/10 rounded-full blur-3xl animate-blob animation-delay-2000" />
-      <div className="absolute bottom-0 left-1/3 w-[30rem] h-[30rem] bg-sky-300/10 rounded-full blur-3xl animate-blob animation-delay-4000" />
+      <div className="absolute top-20 right-1/4 w-md h-112 bg-indigo-300/10 rounded-full blur-3xl animate-blob animation-delay-2000" />
+      <div className="absolute bottom-0 left-1/3 w-120 h-120 bg-sky-300/10 rounded-full blur-3xl animate-blob animation-delay-4000" />
 
       {/* Decorative Floating Glows */}
       <div className="absolute top-20 right-10 w-40 h-40 bg-white/5 rounded-full blur-3xl animate-float" />
@@ -45,7 +45,7 @@ const TopDoctors = () => {
 
         <h1 className="text-4xl md:text-5xl font-bold text-white animate-slideUp">
           Top Doctors to{' '}
-          <span className="bg-gradient-to-r from-blue-200 via-white to-cyan-200 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradientShift">
+          <span className="bg-linear-to-r from-blue-200 via-white to-cyan-200 bg-clip-text text-transparent bg-size-[200%_auto] animate-gradientShift">
             Book
           </span>
         </h1>
@@ -67,12 +67,12 @@ const TopDoctors = () => {
             className="group relative flex flex-col rounded-3xl border border-white/10 overflow-hidden cursor-pointer bg-white/95 backdrop-blur-xl hover:border-blue-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-900/30 transition-all duration-500 animate-fadeInUp"
             style={{ animationDelay: `${index * 0.1}s` }}
           >
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#5F6FFF]/0 via-[#5F6FFF]/10 to-[#7C8AFF]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+            <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-[#5F6FFF]/0 via-[#5F6FFF]/10 to-[#7C8AFF]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-transform duration-1000 pointer-events-none z-20" />
+            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-linear-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-transform duration-1000 pointer-events-none z-20" />
 
-            <div className="relative bg-gradient-to-br from-blue-50 to-purple-50 w-full aspect-square overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-t from-[#5F6FFF]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+            <div className="relative bg-linear-to-br from-blue-50 to-purple-50 w-full aspect-square overflow-hidden">
+              <div className="absolute inset-0 bg-linear-to-t from-[#5F6FFF]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
 
               <img
                 src={item.image}
@@ -86,7 +86,7 @@ const TopDoctors = () => {
             </div>
 
             <div className="p-4 flex flex-col gap-2.5 relative">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-20 h-1 bg-gradient-to-r from-[#5F6FFF] to-[#7C8AFF] rounded-full transition-all duration-500" />
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-20 h-1 bg-linear-to-r from-[#5F6FFF] to-[#7C8AFF] rounded-full transition-all duration-500" />
 
               <div className="flex items-center gap-2 mt-1">
                 <div className="relative">
@@ -127,7 +127,7 @@ const TopDoctors = () => {
                 ))}
               </div>
 
-              <button className="mt-2 w-full py-2.5 bg-gradient-to-r from-[#5F6FFF] to-[#7C8AFF] text-white text-sm font-semibold rounded-xl opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 shadow-lg shadow-blue-500/30 hover:shadow-xl">
+              <button className="mt-2 w-full py-2.5 bg-linear-to-r from-[#5F6FFF] to-[#7C8AFF] text-white text-sm font-semibold rounded-xl opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 shadow-lg shadow-blue-500/30 hover:shadow-xl">
                 Book Now
               </button>
             </div>

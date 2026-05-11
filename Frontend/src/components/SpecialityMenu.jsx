@@ -83,7 +83,7 @@ const SpecialityMenu = () => {
         {/* Heading */}
         <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight animate-slideUp">
           Find by{' '}
-          <span className="bg-gradient-to-r from-blue-200 via-cyan-100 to-white bg-clip-text text-transparent animate-gradient">
+          <span className="bg-linear-to-r from-blue-200 via-cyan-100 to-white bg-clip-text text-transparent animate-gradient">
             Speciality
           </span>
         </h1>
@@ -118,7 +118,7 @@ const SpecialityMenu = () => {
               {/* Shine Sweep */}
               <div
                 className="absolute inset-0 -translate-x-full group-hover:translate-x-full
-                           bg-gradient-to-r from-transparent via-white/20 to-transparent
+                           bg-linear-to-r from-transparent via-white/20 to-transparent
                            transition-transform duration-1000 skew-x-12"
               />
 
@@ -128,7 +128,7 @@ const SpecialityMenu = () => {
                 <div className="absolute inset-0 rounded-full bg-white opacity-0 group-hover:opacity-20 blur-xl scale-125 transition-all duration-500" />
 
                 {/* Ring */}
-                <div className="relative w-24 h-24 rounded-full p-[3px] bg-gradient-to-br from-blue-200 via-cyan-100 to-white">
+                <div className="relative w-24 h-24 rounded-full p-0.75 bg-linear-to-br from-blue-200 via-cyan-100 to-white">
                   <div className="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
                     <img
                       src={item.image}
@@ -141,7 +141,7 @@ const SpecialityMenu = () => {
                 {/* Check Badge */}
                 <div
                   className="absolute -bottom-1 -right-1 w-7 h-7 rounded-full
-                             bg-gradient-to-br from-blue-500 to-cyan-400
+                             bg-linear-to-br from-blue-500 to-cyan-400
                              border-[3px] border-white
                              flex items-center justify-center
                              opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100
@@ -167,7 +167,7 @@ const SpecialityMenu = () => {
                   {item.speciality}
                 </p>
 
-                <div className="mx-auto h-1 w-0 group-hover:w-12 rounded-full bg-gradient-to-r from-blue-200 to-cyan-100 transition-all duration-500" />
+                <div className="mx-auto h-1 w-0 group-hover:w-12 rounded-full bg-linear-to-r from-blue-200 to-cyan-100 transition-all duration-500" />
               </div>
             </Link>
           </li>

@@ -8,12 +8,12 @@ const Contact = () => {
     <>
       <Nav />
 
-      <div className="relative pt-1 overflow-hidden bg-gradient-to-br from-[#020617] via-[#0f172a] to-[#1e3a8a] text-white">
+      <div className="relative pt-1 overflow-hidden bg-linear-to-br from-[#020617] via-[#0f172a] to-[#1e3a8a] text-white">
         {/* Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute -top-24 -left-24 w-96 h-96 bg-cyan-400/20 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute top-1/3 right-0 w-[32rem] h-[32rem] bg-blue-300/10 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-0 left-1/3 w-[28rem] h-[28rem] bg-indigo-400/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute top-1/3 right-0 w-lg h-128 bg-blue-300/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-0 left-1/3 w-md h-112 bg-indigo-400/10 rounded-full blur-3xl animate-pulse" />
           <div
             className="absolute inset-0 opacity-[0.05]"
             style={{
@@ -36,7 +36,7 @@ const Contact = () => {
 
             <h1 className="mt-6 text-4xl md:text-6xl font-extrabold leading-tight text-white">
               We’re Here to
-              <span className="block bg-gradient-to-r from-cyan-200 via-white to-blue-200 bg-clip-text text-transparent">
+              <span className="block bg-linear-to-r from-cyan-200 via-white to-blue-200 bg-clip-text text-transparent">
                 Help You Anytime
               </span>
             </h1>
@@ -48,19 +48,19 @@ const Contact = () => {
           </div>
 
           {/* Main Card */}
-          <div className="relative group rounded-[2rem] overflow-hidden border border-white/15 bg-white/10 backdrop-blur-2xl shadow-[0_25px_80px_rgba(0,0,0,0.35)] hover:shadow-[0_35px_100px_rgba(0,0,0,0.45)] transition-all duration-700">
+          <div className="relative group rounded-4xl overflow-hidden border border-white/15 bg-white/10 backdrop-blur-2xl shadow-[0_25px_80px_rgba(0,0,0,0.35)] hover:shadow-[0_35px_100px_rgba(0,0,0,0.45)] transition-all duration-700">
             {/* Hover Glow */}
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 via-transparent to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+            <div className="absolute inset-0 bg-linear-to-r from-cyan-400/10 via-transparent to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
             <div className="grid md:grid-cols-2">
               {/* Left Image Section */}
               <div className="relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#0d47a1]/40 to-transparent z-10" />
+                <div className="absolute inset-0 bg-linear-to-tr from-[#0d47a1]/40 to-transparent z-10" />
 
                 <img
                   src={assets.contact_image}
                   alt="Contact MediSync"
-                  className="w-full h-full min-h-[420px] object-cover group-hover:scale-110 transition-transform duration-[2000ms]"
+                  className="w-full h-full min-h-105 object-cover group-hover:scale-110 transition-transform duration-2000"
                 />
 
                 {/* Floating Info Badge */}

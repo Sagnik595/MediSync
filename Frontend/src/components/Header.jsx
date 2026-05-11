@@ -23,7 +23,7 @@ const Header = () => {
     <div
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="relative flex flex-col md:flex-row items-center justify-between w-full pt-25 px-8 md:px-14 py-14 overflow-hidden min-h-[340px] md:min-h-[380px]"
+      className="relative flex flex-col md:flex-row items-center justify-between w-full pt-25 px-8 md:px-14 py-14 overflow-hidden min-h-85 md:min-h-95"
       style={{
         background: "linear-gradient(135deg, #1a73e8 0%, #0d47a1 55%, #0a2e6e 100%)",
         // boxShadow: "0 30px 80px rgba(13, 71, 161, 0.45), 0 8px 24px rgba(0,0,0,0.18)",
@@ -141,7 +141,7 @@ const Header = () => {
             transition: "opacity 0.8s 0.4s ease, transform 0.8s 0.4s ease",
           }}
         >
-          <div className="relative flex-shrink-0">
+          <div className="relative shrink-0">
             <div
               className="absolute inset-0 rounded-full blur-md opacity-50"
               style={{ background: "linear-gradient(135deg, #60a5fa, #3b82f6)" }}
