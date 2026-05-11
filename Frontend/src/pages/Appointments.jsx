@@ -1,10 +1,11 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { useContext } from "react";
 import { AppContext } from "../context/Context";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 const DAYS = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 const TIME_SLOTS = [
@@ -27,22 +28,35 @@ function getNextDays(count = 7) {
   });
 }
 
-
 const Appointments = () => {
-  const {doctors, bookappointment, setAppointment} = useContext(AppContext)
+  const { doctors, backendurl, token, loadAppointments } =
+    useContext(AppContext);
   const navigate = useNavigate();
   const { docID } = useParams();
   const doctor = doctors.find((d) => d._id.toString() === docID);
-  
 
-  const handleSubmit = (element)=>{
-    console.log(element);
-    
-  setAppointment(prev=>[...prev,element])
-  toast('Appointment Booked!!')
-  navigate('/')
-  
-}
+  const handleSubmit = async (element) => {
+    try {
+      const { data } = await axios.post(
+        `${backendurl}/api/user/addAppointment`,
+        element,
+        {
+          headers: { token },
+        },
+      );
+
+      if (data.success) {
+        toast.success(data.message);
+        await loadAppointments();
+        navigate("/myappointments");
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error(error.message);
+    }
+  };
 
   const days = getNextDays();
   const [selectedDay, setSelectedDay] = useState(0);
@@ -150,14 +164,14 @@ const Appointments = () => {
           </div>
 
           <button
-          onClick={()=>{
-            let finalData = {
-              doctor,
-              time:selectedTime,
-              day:DAYS[selectedDay]
-            }
-            handleSubmit(finalData)
-          }}
+            onClick={() => {
+              let finalData = {
+                docData: doctor,
+                time: selectedTime,
+                day: DAYS[selectedDay],
+              };
+              handleSubmit(finalData);
+            }}
             disabled={!selectedTime}
             className={` cursor-pointer w-full sm:w-64 py-3 rounded-full text-white text-sm font-medium transition-all
               ${selectedTime ? "bg-blue-600 hover:bg-blue-700" : "bg-blue-300 cursor-not-allowed"}`}
