@@ -14,7 +14,7 @@ const doctorSchema = mongoose.Schema({
     address:{type:Object, required:true},
     date:{type:Date, required:true},
     slots_booked:{type:Object, default:{}, required:true},
-},{minimize:false})
+},{minimize:false});
 
 const doctorModel = mongoose.models.Doctor || mongoose.model("Doctor",doctorSchema);
 

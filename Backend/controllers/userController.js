@@ -115,4 +115,116 @@ const editProfile = async (req, res) => {
   }
 };
 
-export { registerUser, loginUser, getProfile, editProfile };
+
+//API to add appointments
+const addAppointment = async (req, res) => {
+  try {
+    const userID = req.userID;
+    const { docData, time, day } = req.body;
+
+    // Validate input
+    if (!docData || !time || !day) {
+      return res.json({
+        success: false,
+        message: "Doctor data, time and day are required",
+      });
+    }
+
+    // Create appointment object
+    const appointment = {
+      docData,
+      time,
+      day,
+    };
+
+    // Add appointment to user's appointmentsData array
+    await userModel.findByIdAndUpdate(
+      userID,
+      {
+        $push: {
+          appointmentsData: appointment,
+        },
+      },
+      { new: true }
+    );
+
+    return res.json({
+      success: true,
+      message: "Appointment booked successfully",
+    });
+  } catch (error) {
+    console.log(error);
+    return res.json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+
+// API to cancel appointment
+const cancelAppointment = async (req, res) => {
+  try {
+    const userID = req.userID;
+    const { appointmentID } = req.body;
+
+    if (!appointmentID) {
+      return res.json({
+        success: false,
+        message: "Appointment ID is required",
+      });
+    }
+
+    // Remove appointment from appointmentsData array
+    await userModel.findByIdAndUpdate(userID, {
+      $pull: {
+        appointmentsData: {
+          _id: appointmentID,
+        },
+      },
+    });
+
+    return res.json({
+      success: true,
+      message: "Appointment cancelled successfully",
+    });
+  } catch (error) {
+    console.log(error);
+    return res.json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+
+// API to get all appointments of the logged-in user
+const getAppointments = async (req, res) => {
+  try {
+    const userID = req.userID;
+
+    const user = await userModel
+      .findById(userID)
+      .select("appointmentsData");
+
+    if (!user) {
+      return res.json({
+        success: false,
+        message: "User not found",
+      });
+    }
+
+    return res.json({
+      success: true,
+      appointments: user.appointmentsData,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+export { registerUser, loginUser, getProfile, editProfile, addAppointment,cancelAppointment,getAppointments };
